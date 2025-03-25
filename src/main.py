@@ -7,7 +7,8 @@ from imblearn.over_sampling import SMOTE
 import data_process as data
 
 from models import (
-    train_bayesian_network
+    train_bayesian_network,
+    train_neural_network
 )
 
 def main(x, y):
@@ -15,6 +16,7 @@ def main(x, y):
 
     models = {
         "Bayesian": train_bayesian_network,
+        "Neural Network": train_neural_network,
     }
 
     results = {name: [] for name in models}
@@ -58,8 +60,6 @@ def main(x, y):
     plt.tight_layout()
     plt.show()
 
-
 if __name__ == "__main__":
-
     x, y = data.read_data(891)
     main(x, y)
