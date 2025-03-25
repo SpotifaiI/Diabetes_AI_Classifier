@@ -8,7 +8,8 @@ import data_process as data
 
 from models import (
     train_bayesian_network,
-    train_neural_network
+    train_neural_network,
+    train_random_forest,
 )
 
 def main(x, y):
@@ -17,6 +18,7 @@ def main(x, y):
     models = {
         "Bayesian": train_bayesian_network,
         "Neural Network": train_neural_network,
+        "Random Forest": train_random_forest,
     }
 
     results = {name: [] for name in models}
