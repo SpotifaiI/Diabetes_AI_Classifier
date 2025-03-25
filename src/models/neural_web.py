@@ -1,19 +1,8 @@
-# src/models/neural_web.py
 import numpy as np
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import StandardScaler
 
 def train_neural_network(x_train, y_train):
-    """
-    Treina uma Rede Neural MLP para classificação de diabetes.
-
-    Args:
-        x_train: Dados de entrada de treinamento
-        y_train: Rótulos de treinamento
-
-    Returns:
-        model: Modelo treinado contendo o scaler e o classificador
-    """
     scaler = StandardScaler()
     x_train_scaled = scaler.fit_transform(x_train)
 
