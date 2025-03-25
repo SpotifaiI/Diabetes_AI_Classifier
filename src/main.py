@@ -2,20 +2,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import KFold
 from sklearn.metrics import accuracy_score, classification_report
+from imblearn.over_sampling import SMOTE
 
 import data_process as data
 
 from models import (
-    train_bayesian_network,
-    train_mlp_model
+    train_bayesian_network
 )
 
 def main(x, y):
-    kf = KFold(n_splits=10, shuffle=True, random_state=42)
+    kf = KFold(n_splits=3, shuffle=True, random_state=42)
 
     models = {
         "Bayesian": train_bayesian_network,
-        "mlp" : train_mlp_model
     }
 
     results = {name: [] for name in models}
@@ -23,18 +22,18 @@ def main(x, y):
     for fold, (train_val_index, test_index) in enumerate(kf.split(x), 1):
         print(f"\n=== Fold {fold} ===")
 
-        x_test, y_test = x[test_index], y[test_index]
-        x_train_val, y_train_val = x[train_val_index], y[train_val_index]
+        x_train_val = x.iloc[train_val_index]
+        y_train_val = y.iloc[train_val_index]
+        x_test = x.iloc[test_index]
+        y_test = y.iloc[test_index]
 
-        train_size = int(0.8235 * len(x_train_val))
-        x_train = x_train_val[:train_size]
-        y_train = y_train_val[:train_size]
-        x_val = x_train_val[train_size:]
-        y_val = y_train_val[train_size:]
+        x_train = x_train_val
+        y_train = y_train_val
+        print(y_train.value_counts(normalize=True))
 
         for name, train_func in models.items():
             print(f"\n>>> Treinando modelo: {name}")
-            model = train_func(x_train, y_train, x_val, y_val)
+            model = train_func(x_train, y_train)
 
             y_pred = model.predict(x_test)
             acc = accuracy_score(y_test, y_pred)
@@ -61,6 +60,6 @@ def main(x, y):
 
 
 if __name__ == "__main__":
-    x = data.data_train
-    y = data.data_target
+
+    x, y = data.read_data(891)
     main(x, y)
