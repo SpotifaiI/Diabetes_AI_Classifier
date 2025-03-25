@@ -10,5 +10,4 @@ def train_bayesian_network(X_train, y_train, X_val=None, y_val=None):
         acc = accuracy_score(y_val, y_pred)
         print("Validação - Acurácia:", acc)
         print("Relatório de Classificação:\n", classification_report(y_val, y_pred))
-
     return model
