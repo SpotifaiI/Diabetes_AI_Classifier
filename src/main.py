@@ -9,7 +9,8 @@ from sklearn.metrics import accuracy_score, classification_report
 import data_process as data
 from models import (
     train_bayesian_network,
-    train_neural_network
+    train_neural_network,
+    train_random_forest,
 )
 
 def main(x, y, task_id):
@@ -30,8 +31,8 @@ def main(x, y, task_id):
 
     models = {
         "Bayesian": train_bayesian_network,
-        "Neural_network" : train_neural_network
-        
+        "Neural Network": train_neural_network,
+        "Random Forest": train_random_forest,
     }
     models_acc_list = {model_name: [] for model_name in models}
 
