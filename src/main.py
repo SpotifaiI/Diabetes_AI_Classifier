@@ -1,60 +1,75 @@
+import os
 import numpy as np
+import logging
 import matplotlib.pyplot as plt
-from sklearn.model_selection import KFold
+import uuid
+
 from sklearn.metrics import accuracy_score, classification_report
-from imblearn.over_sampling import SMOTE
 
 import data_process as data
-
 from models import (
     train_bayesian_network,
     train_neural_network,
     train_random_forest,
 )
 
-def main(x, y):
-    kf = KFold(n_splits=3, shuffle=True, random_state=42)
+def main(x, y, task_id):
+    logging.info(
+        "==========Starting process id: %s ================",
+        task_id
+    )
+
+    filename = 'kfold_splits.csv'
+    df_splits = data.gen_kfold_and_save(
+        x,
+        filename=filename,
+        n_splits=3,
+        shuffle=True,
+        random_state=42
+    )
+    df_splits = data.load_kfold_df(filename)
 
     models = {
         "Bayesian": train_bayesian_network,
         "Neural Network": train_neural_network,
         "Random Forest": train_random_forest,
     }
+    models_acc_list = {model_name: [] for model_name in models}
 
-    results = {name: [] for name in models}
+    for model_name, train_model in models.items():
+        logging.info("=== Training and rating model : %s ===", model_name)
+        
+        for _, row in df_splits.iterrows():
+            fold = row["fold"]
+            train_indices = eval(row["train_indices"])
+            test_indices = eval(row["test_indices"])
 
-    for fold, (train_val_index, test_index) in enumerate(kf.split(x), 1):
-        print(f"\n=== Fold {fold} ===")
+            x_train_val = x.iloc[train_indices]
+            y_train_val = y.iloc[train_indices]
+            x_test = x.iloc[test_indices]
+            y_test = y.iloc[test_indices]
 
-        x_train_val = x.iloc[train_val_index]
-        y_train_val = y.iloc[train_val_index]
-        x_test = x.iloc[test_index]
-        y_test = y.iloc[test_index]
+            # sm = SMOTE(random_state=42)
+            # x_train_val, y_train_val = sm.fit_resample(x_train_val, y_train_val)
 
-        x_train = x_train_val
-        y_train = y_train_val
-        print(y_train.value_counts(normalize=True))
-
-        for name, train_func in models.items():
-            print(f"\n>>> Treinando modelo: {name}")
-            model = train_func(x_train, y_train)
-
+            model = train_model(x_train_val, y_train_val)
             y_pred = model.predict(x_test)
             acc = accuracy_score(y_test, y_pred)
-            print(f"[{name}] Teste - Acurácia:", acc)
-            print(classification_report(y_test, y_pred))
-            results[name].append(acc)
+            models_acc_list[model_name].append(acc)
 
-    print("\n=== Resultados Médios ===")
-    for name, accs in results.items():
-        print(f"{name}: Média = {np.mean(accs):.4f}, Desvio Padrão = {np.std(accs):.4f}")
+            logging.info(f"Fold {fold} - Accuracy: {acc:.4f}")
+            logging.info(classification_report(y_test, y_pred))
+    
+    logging.info("=== Accuracy average results ===")
+    for model_name, accs in models_acc_list.items():
+        logging.info(f"{model_name}: Average = {np.mean(accs):.4f}, Standart Variation = {np.std(accs):.4f}")
 
-    model_names = list(results.keys())
-    accuracies = list(results.values())
+    models_name = list(models_acc_list.keys())
+    average_acc_per_model = [np.mean(models_acc_list[m]) for m in models_name]
+    os.remove(filename)
 
     plt.figure(figsize=(10, 6))
-    avg_accuracies = [np.mean(acc) for acc in accuracies]
-    plt.bar(model_names, avg_accuracies)
+    plt.bar(models_name, average_acc_per_model)
     plt.title("Média de Acurácia por Modelo")
     plt.ylabel("Acurácia Média")
     plt.ylim(0, 1)
@@ -64,4 +79,5 @@ def main(x, y):
 
 if __name__ == "__main__":
     x, y = data.read_data(891)
-    main(x, y)
+    task_id = uuid.uuid4()
+    main(x, y, task_id)
