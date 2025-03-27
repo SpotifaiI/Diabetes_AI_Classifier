@@ -11,6 +11,7 @@ from models import (
     train_bayesian_network,
     train_neural_network,
     train_random_forest,
+    train_knn_classifier
 )
 
 def main(x, y, task_id):
@@ -33,6 +34,7 @@ def main(x, y, task_id):
         "Bayesian": train_bayesian_network,
         "Neural Network": train_neural_network,
         "Random Forest": train_random_forest,
+        "KNN": train_knn_classifier,
     }
     models_acc_list = {model_name: [] for model_name in models}
 
