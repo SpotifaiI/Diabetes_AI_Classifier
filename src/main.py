@@ -11,7 +11,8 @@ from models import (
     train_bayesian_network,
     train_neural_network,
     train_random_forest,
-    train_knn_classifier
+    train_knn_classifier,
+    train_svm_classifier
 )
 
 def main(x, y, task_id):
@@ -35,6 +36,7 @@ def main(x, y, task_id):
         "Neural Network": train_neural_network,
         "Random Forest": train_random_forest,
         "KNN": train_knn_classifier,
+        "SVM": train_svm_classifier
     }
     models_acc_list = {model_name: [] for model_name in models}
 
@@ -64,7 +66,7 @@ def main(x, y, task_id):
     
     logging.info("=== Accuracy average results ===")
     for model_name, accs in models_acc_list.items():
-        logging.info(f"{model_name}: Average = {np.mean(accs):.4f}, Standart Variation = {np.std(accs):.4f}")
+        logging.info(f"{model_name}: Average = {np.mean(accs):.4f}, Standard Variation = {np.std(accs):.4f}")
 
     models_name = list(models_acc_list.keys())
     average_acc_per_model = [np.mean(models_acc_list[m]) for m in models_name]
