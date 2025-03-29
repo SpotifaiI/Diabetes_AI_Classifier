@@ -21,11 +21,11 @@
 
 # Equipe
 
-* Cristian Prochnow
-* Gustavo Henrique Dias
-* Lucas Willian de Souza Serpa
-* Marlon de Souza
-* Ryan Gabriel Mazzei Bromati
+- Cristian Prochnow
+- Gustavo Henrique Dias
+- Lucas Willian de Souza Serpa
+- Marlon de Souza
+- Ryan Gabriel Mazzei Bromati
 
 # Base de dados
 
@@ -33,36 +33,40 @@ Para o desenvolvimento do projeto, usaremos a base [CDC Diabetes Health Indicato
 
 A pesquisa foi conduzida desde 1984, e todo ano os dados eram obtidos por meio de questionamento direto para com os pacientes, juntamente com análise estatística dos tratamentos feitos e outros processos relacionados. A base de dados que foi disponibilizada nessa postagem do Kaggle é relacionada aos dados relacionados ao ano de 2015, e é dividida em 3 bases.
 
-A primeira delas é a que usaremos, ao qual possui 253.680 registros e são os dados das conversas tidas diretamente com os pacientes que fizeram parte do processo. Nessa base temos então 21 *features* disponíveis, que resultam em 3 classes totais, equivalentes a paciente diagnosticado com diabete, com pré-diabete e que não possui.
+A primeira delas é a que usaremos, ao qual possui 253.680 registros e são os dados das conversas tidas diretamente com os pacientes que fizeram parte do processo. Nessa base temos então 21 _features_ disponíveis, que resultam em 3 classes totais, equivalentes a paciente diagnosticado com diabete, com pré-diabete e que não possui.
 
 ## Colunas da tabela
 
-Esse *dataset* possui 21 *features* para uso. Dentre elas estão algumas que indicam valores de decisão — se consumia frutas todos os dias, por exemplo — enquanto outras são mais relacionadas a agregação de dados — anotando o índice de massa corporal do paciente consultado, por exemplo.
+Esse _dataset_ possui 21 _features_ para uso. Dentre elas estão algumas que indicam valores de decisão — se consumia frutas todos os dias, por exemplo — enquanto outras são mais relacionadas a agregação de dados — anotando o índice de massa corporal do paciente consultado, por exemplo.
 
-| Coluna | Tipo de valor | Descrição |
-| :---- | :---- | :---- |
-| Diabetes\_012 | Decisão | Determina o diagnóstico do paciente. Então 0 é sem diabetes; 1 é pré-diabético e 2 é diabético. |
-| HighBP | Decisão | Paciente possui ou não pressão alta. 0 é sem pressão alta e 1 possui pressão quadro de pressão alta. |
-| HighChol | Decisão | Paciente possui ou não alto nível de colesterol no sangue. 0 é colesterol normal e 1 é colesterol alto. |
-| CholCheck | Decisão | Se paciente realizou ou não exame de nível de colesterol no sangue nos últimos 5 anos. 0 é que não realizou e 1 para quem realizou. |
-| BMI | Medida | Medida de Índice de Massa Corporal do paciente. |
-| Smoker | Decisão | Se paciente já fumou pelo menos 5 carteiras de cigarro (100 cigarros) ao longo da vida. 0 para não e 1 para sim. |
-| Stroke | Decisão | Se paciente já sofreu AVC. 0 para não e 1 para sim. |
-| HeartDiseaseorAttack | Decisão | Se paciente já sofreu algum evento grave relacionado à doenças cardíacas. 0 para não e 1 para sim. |
-| PhysActivity | Decisão | Se paciente praticou atividade física nos últimos 30 dias. 0 para não e 1 para sim. |
-| Fruits | Decisão | Se paciente consome 1 ou mais frutas por dia. 0 para não e 1 para sim. |
-| Veggies | Decisão | Se paciente consome 1 ou mais vegetais por dia. 0 para não e 1 para sim. |
-| HvyAlcoholConsump | Decisão | Paciente consome bebida alcóolica em demasia (homens adultos com mais de 14 bebidas por semana e mulheres com mais de 7 por semana). 0 para não e 1 para sim. |
-| AnyHealthcare | Decisão | Paciente possui algum tipo de plano ou assistência médica. 0 para não e 1 para sim. |
-| NoDocbcCost | Decisão | Em algum momento nos 12 meses paciente precisou ir ao médico, mas não foi devido ao custo. 0 para não e 1 para sim. |
-| GenHlth | Opções | Em uma escala de 1 a 5, sua saúde está em quanto? (1 excelente; 2 muito boa; 3 boa; 4 justa e 5 ruim) |
-| MentHlth | Opções | Considerando fatores relacionados à saúde mental (estresse, depressão e problemas emocionais), por quantos dias nos últimos 30 dias paciente sentiu que saúde mental não estava boa? (escala de 1 a 30 dias) |
-| PhysHlth | Opções | Considerando fatores relacionados à saúde física (lesões, dores ou desconfortos), por quantos dias nos últimos 30 dias paciente sentiu que saúde física não estava boa? (escala de 1 a 30 dias) |
-| DiffWalk | Decisão | Paciente tem dificuldade ao andar ou subir escadas? 0 para não e 1 para sim. |
-| Sex | Decisão | Sexo do paciente. 0 para feminino e 1 para masculino. |
-| Age | Opções | Faixa etária. 1 para 18-24 anos; 9 para 60-64 e 13 para a partir de 80 anos. |
-| Education | Opções | Escolaridade em uma escala de 1 a 6\. 1 para nunca frequentou a escola ou apenas educação infantil; 2 para ensino Fundamental (anos iniciais e finais) incompleto ou completo; 3 para Ensino Médio incompleto; 4 para ensino Médio completo ou equivalente; 5 para ensino Superior/Técnico incompleto e 6 para ensino Superior completo. |
-| Income | Opções | Escala de 1-8 para salário anual do paciente. 1 para menos que $10.000 anuais; 5 para menos que $35.000 e 8 para $75.000 ou mais. |
+| Coluna               | Tipo de valor | Descrição                                                                                                                                                                                                                                                                                                                                |
+| :------------------- | :------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Diabetes_012         | Decisão       | Determina o diagnóstico do paciente. Então 0 é sem diabetes; 1 é pré-diabético e 2 é diabético.                                                                                                                                                                                                                                          |
+| HighBP               | Decisão       | Paciente possui ou não pressão alta. 0 é sem pressão alta e 1 possui pressão quadro de pressão alta.                                                                                                                                                                                                                                     |
+| HighChol             | Decisão       | Paciente possui ou não alto nível de colesterol no sangue. 0 é colesterol normal e 1 é colesterol alto.                                                                                                                                                                                                                                  |
+| CholCheck            | Decisão       | Se paciente realizou ou não exame de nível de colesterol no sangue nos últimos 5 anos. 0 é que não realizou e 1 para quem realizou.                                                                                                                                                                                                      |
+| BMI                  | Medida        | Medida de Índice de Massa Corporal do paciente.                                                                                                                                                                                                                                                                                          |
+| Smoker               | Decisão       | Se paciente já fumou pelo menos 5 carteiras de cigarro (100 cigarros) ao longo da vida. 0 para não e 1 para sim.                                                                                                                                                                                                                         |
+| Stroke               | Decisão       | Se paciente já sofreu AVC. 0 para não e 1 para sim.                                                                                                                                                                                                                                                                                      |
+| HeartDiseaseorAttack | Decisão       | Se paciente já sofreu algum evento grave relacionado à doenças cardíacas. 0 para não e 1 para sim.                                                                                                                                                                                                                                       |
+| PhysActivity         | Decisão       | Se paciente praticou atividade física nos últimos 30 dias. 0 para não e 1 para sim.                                                                                                                                                                                                                                                      |
+| Fruits               | Decisão       | Se paciente consome 1 ou mais frutas por dia. 0 para não e 1 para sim.                                                                                                                                                                                                                                                                   |
+| Veggies              | Decisão       | Se paciente consome 1 ou mais vegetais por dia. 0 para não e 1 para sim.                                                                                                                                                                                                                                                                 |
+| HvyAlcoholConsump    | Decisão       | Paciente consome bebida alcóolica em demasia (homens adultos com mais de 14 bebidas por semana e mulheres com mais de 7 por semana). 0 para não e 1 para sim.                                                                                                                                                                            |
+| AnyHealthcare        | Decisão       | Paciente possui algum tipo de plano ou assistência médica. 0 para não e 1 para sim.                                                                                                                                                                                                                                                      |
+| NoDocbcCost          | Decisão       | Em algum momento nos 12 meses paciente precisou ir ao médico, mas não foi devido ao custo. 0 para não e 1 para sim.                                                                                                                                                                                                                      |
+| GenHlth              | Opções        | Em uma escala de 1 a 5, sua saúde está em quanto? (1 excelente; 2 muito boa; 3 boa; 4 justa e 5 ruim)                                                                                                                                                                                                                                    |
+| MentHlth             | Opções        | Considerando fatores relacionados à saúde mental (estresse, depressão e problemas emocionais), por quantos dias nos últimos 30 dias paciente sentiu que saúde mental não estava boa? (escala de 1 a 30 dias)                                                                                                                             |
+| PhysHlth             | Opções        | Considerando fatores relacionados à saúde física (lesões, dores ou desconfortos), por quantos dias nos últimos 30 dias paciente sentiu que saúde física não estava boa? (escala de 1 a 30 dias)                                                                                                                                          |
+| DiffWalk             | Decisão       | Paciente tem dificuldade ao andar ou subir escadas? 0 para não e 1 para sim.                                                                                                                                                                                                                                                             |
+| Sex                  | Decisão       | Sexo do paciente. 0 para feminino e 1 para masculino.                                                                                                                                                                                                                                                                                    |
+| Age                  | Opções        | Faixa etária. 1 para 18-24 anos; 9 para 60-64 e 13 para a partir de 80 anos.                                                                                                                                                                                                                                                             |
+| Education            | Opções        | Escolaridade em uma escala de 1 a 6\. 1 para nunca frequentou a escola ou apenas educação infantil; 2 para ensino Fundamental (anos iniciais e finais) incompleto ou completo; 3 para Ensino Médio incompleto; 4 para ensino Médio completo ou equivalente; 5 para ensino Superior/Técnico incompleto e 6 para ensino Superior completo. |
+| Income               | Opções        | Escala de 1-8 para salário anual do paciente. 1 para menos que $10.000 anuais; 5 para menos que $35.000 e 8 para $75.000 ou mais.                                                                                                                                                                                                        |
+
+## Disclaimer
+
+Ao analisar a base de dados, notamos um desbalanceamento significativo nos resultados, o que poderia impactar o desempenho do modelo de machine learning. Para mitigar esse problema, tentamos aplicar um método de balanceamento conhecido como SMOTE (Synthetic Minority Over-sampling Technique), que gera novas amostras sintéticas da classe minoritária em vez de apenas replicar os dados existentes. No entanto, após a aplicação do SMOTE, não obtivemos os resultados esperados, o que pode ter ocorrido devido a características específicas da base de dados ou à forma como os novos exemplos foram gerados. Diante disso, optamos por utilizar os dados originais sem alterações e lidar com o desbalanceamento de outras formas durante o treinamento do modelo.
 
 # Algoritmos
 
@@ -78,7 +82,7 @@ O K-Nearest Neighbors (KNN) é um algoritmo de aprendizado supervisionado simple
 def train_knn_classifier(X_train, y_train, X_val=None, y_val=None, n_neighbors=5):
     model = KNeighborsClassifier(n_neighbors=n_neighbors)
     model.fit(X_train, y_train)
-    
+
     if X_val is not None and y_val is not None:
         y_pred = model.predict(X_val)
         acc = accuracy_score(y_val, y_pred)
@@ -119,7 +123,7 @@ O SVM (Support Vector Machine) é um algoritmo de aprendizado supervisionado uti
 
 def train_svm_classifier(X_train, y_train, X_val=None, y_val=None, C=1.0):
     model = make_pipeline(StandardScaler(), LinearSVC(dual=False, max_iter=10000, C=C))
-    
+
     model.fit(X_train, y_train)
 
     if X_val is not None and y_val is not None:
@@ -203,11 +207,11 @@ def train_neural_network(x_train, y_train):
 
 # Execução
 
-A estrutura de arquivos do projeto é formada pelo arquivo de *output*, ao qual conterá os *logs* do processamento e que pode ser encontrado em `utils/app.log`.
+A estrutura de arquivos do projeto é formada pelo arquivo de _output_, ao qual conterá os _logs_ do processamento e que pode ser encontrado em `utils/app.log`.
 
-Junto a isso, temos então a pasta `src`, onde toda a mágica acontece. Nessa pasta há o arquivo `src/main.py`, que é responsável pelo *bootstrap* do projeto e também chamar todos os **modelos** (`src/models`) de algoritmo que foram feitos. Já, o arquivo `src/data_process.py` possui funções que são primordiais para o processamento dos dados e que são chamadas também no `main.py` para auxiliar na lógica.
+Junto a isso, temos então a pasta `src`, onde toda a mágica acontece. Nessa pasta há o arquivo `src/main.py`, que é responsável pelo _bootstrap_ do projeto e também chamar todos os **modelos** (`src/models`) de algoritmo que foram feitos. Já, o arquivo `src/data_process.py` possui funções que são primordiais para o processamento dos dados e que são chamadas também no `main.py` para auxiliar na lógica.
 
-E, então, na pasta `src/models` temos todos os algoritmos que foram citados acima, em seus respectivos arquivos. Esses arquivos são então chamados no `main.py` para que a execução ocorra por completo, registrando os *logs*.
+E, então, na pasta `src/models` temos todos os algoritmos que foram citados acima, em seus respectivos arquivos. Esses arquivos são então chamados no `main.py` para que a execução ocorra por completo, registrando os _logs_.
 
 Para rodar o projeto, basta então executar os comandos abaixo:
 
@@ -389,7 +393,7 @@ weighted avg       0.83      0.86      0.81     84560
 
 ## Métricas
 
-Esse *log* oferece a visualização das seguintes métricas:
+Esse _log_ oferece a visualização das seguintes métricas:
 
 ### Acurácia (Accuracy)
 

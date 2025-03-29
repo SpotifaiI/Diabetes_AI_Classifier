@@ -1,0 +1,606 @@
+2025-03-28 20:53:25,566 - INFO - Data balance: Diabetes_binary
+0    0.860667
+1    0.139333
+Name: proportion, dtype: float64
+2025-03-28 20:53:25,573 - INFO - ==========Starting process id: 28eb3901-2b74-4cd9-8cf9-529c4a805928 ================
+2025-03-28 20:53:25,964 - INFO - === Training and rating model : Bayesian ===
+2025-03-28 20:53:26,905 - INFO - Fold 1 - Accuracy: 0.7721
+2025-03-28 20:53:26,919 - INFO -               precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     72905
+           1       0.32      0.57      0.41     11655
+
+    accuracy                           0.77     84560
+   macro avg       0.62      0.69      0.63     84560
+weighted avg       0.84      0.77      0.80     84560
+
+2025-03-28 20:53:27,855 - INFO - Fold 2 - Accuracy: 0.7760
+2025-03-28 20:53:27,868 - INFO -               precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     72653
+           1       0.33      0.58      0.42     11907
+
+    accuracy                           0.78     84560
+   macro avg       0.63      0.69      0.64     84560
+weighted avg       0.84      0.78      0.80     84560
+
+2025-03-28 20:53:28,801 - INFO - Fold 3 - Accuracy: 0.7723
+2025-03-28 20:53:28,814 - INFO -               precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     72776
+           1       0.32      0.56      0.41     11784
+
+    accuracy                           0.77     84560
+   macro avg       0.62      0.69      0.63     84560
+weighted avg       0.84      0.77      0.80     84560
+
+2025-03-28 20:53:28,814 - INFO - === Training and rating model : Neural Network ===
+2025-03-28 20:53:34,213 - INFO - Fold 1 - Accuracy: 0.8671
+2025-03-28 20:53:34,225 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.99      0.93     72905
+           1       0.59      0.12      0.20     11655
+
+    accuracy                           0.87     84560
+   macro avg       0.73      0.55      0.56     84560
+weighted avg       0.84      0.87      0.83     84560
+
+2025-03-28 20:53:43,297 - INFO - Fold 2 - Accuracy: 0.8649
+2025-03-28 20:53:43,310 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.98      0.93     72653
+           1       0.58      0.15      0.23     11907
+
+    accuracy                           0.86     84560
+   macro avg       0.73      0.56      0.58     84560
+weighted avg       0.83      0.86      0.83     84560
+
+2025-03-28 20:53:48,940 - INFO - Fold 3 - Accuracy: 0.8670
+2025-03-28 20:53:48,952 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.99      0.93     72776
+           1       0.60      0.14      0.22     11784
+
+    accuracy                           0.87     84560
+   macro avg       0.74      0.56      0.57     84560
+weighted avg       0.84      0.87      0.83     84560
+
+2025-03-28 20:53:48,952 - INFO - === Training and rating model : Random Forest ===
+2025-03-28 20:53:52,473 - INFO - Fold 1 - Accuracy: 0.8592
+2025-03-28 20:53:52,487 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.97      0.92     72905
+           1       0.47      0.17      0.25     11655
+
+    accuracy                           0.86     84560
+   macro avg       0.68      0.57      0.59     84560
+weighted avg       0.82      0.86      0.83     84560
+
+2025-03-28 20:53:56,145 - INFO - Fold 2 - Accuracy: 0.8586
+2025-03-28 20:53:56,157 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.97      0.92     72653
+           1       0.49      0.16      0.25     11907
+
+    accuracy                           0.86     84560
+   macro avg       0.69      0.57      0.58     84560
+weighted avg       0.82      0.86      0.83     84560
+
+2025-03-28 20:53:59,915 - INFO - Fold 3 - Accuracy: 0.8601
+2025-03-28 20:53:59,929 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.97      0.92     72776
+           1       0.49      0.17      0.26     11784
+
+    accuracy                           0.86     84560
+   macro avg       0.69      0.57      0.59     84560
+weighted avg       0.83      0.86      0.83     84560
+
+2025-03-28 20:53:59,929 - INFO - === Training and rating model : KNN ===
+2025-03-28 20:57:07,726 - INFO - Fold 1 - Accuracy: 0.8478
+2025-03-28 20:57:07,744 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.95      0.92     72905
+           1       0.39      0.19      0.26     11655
+
+    accuracy                           0.85     84560
+   macro avg       0.64      0.57      0.59     84560
+weighted avg       0.81      0.85      0.82     84560
+
+2025-03-28 21:00:05,603 - INFO - Fold 2 - Accuracy: 0.8474
+2025-03-28 21:00:05,617 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.95      0.91     72653
+           1       0.41      0.20      0.27     11907
+
+    accuracy                           0.85     84560
+   macro avg       0.65      0.57      0.59     84560
+weighted avg       0.81      0.85      0.82     84560
+
+2025-03-28 21:03:05,448 - INFO - Fold 3 - Accuracy: 0.8466
+2025-03-28 21:03:05,462 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.95      0.91     72776
+           1       0.40      0.19      0.26     11784
+
+    accuracy                           0.85     84560
+   macro avg       0.64      0.57      0.59     84560
+weighted avg       0.81      0.85      0.82     84560
+
+2025-03-28 21:03:05,462 - INFO - === Training and rating model : SVM ===
+2025-03-28 21:03:06,623 - INFO - Fold 1 - Accuracy: 0.8648
+2025-03-28 21:03:06,637 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93     72905
+           1       0.58      0.07      0.12     11655
+
+    accuracy                           0.86     84560
+   macro avg       0.72      0.53      0.53     84560
+weighted avg       0.83      0.86      0.82     84560
+
+2025-03-28 21:03:07,741 - INFO - Fold 2 - Accuracy: 0.8614
+2025-03-28 21:03:07,756 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.92     72653
+           1       0.57      0.06      0.12     11907
+
+    accuracy                           0.86     84560
+   macro avg       0.72      0.53      0.52     84560
+weighted avg       0.82      0.86      0.81     84560
+
+2025-03-28 21:03:08,878 - INFO - Fold 3 - Accuracy: 0.8640
+2025-03-28 21:03:08,890 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93     72776
+           1       0.60      0.07      0.13     11784
+
+    accuracy                           0.86     84560
+   macro avg       0.74      0.53      0.53     84560
+weighted avg       0.83      0.86      0.81     84560
+
+2025-03-28 21:03:08,890 - INFO - === Accuracy average results ===
+2025-03-28 21:03:08,890 - INFO - Bayesian: Average = 0.7735, Standard Variation = 0.0018
+2025-03-28 21:03:08,891 - INFO - Neural Network: Average = 0.8663, Standard Variation = 0.0010
+2025-03-28 21:03:08,891 - INFO - Random Forest: Average = 0.8593, Standard Variation = 0.0006
+2025-03-28 21:03:08,891 - INFO - KNN: Average = 0.8473, Standard Variation = 0.0005
+2025-03-28 21:03:08,891 - INFO - SVM: Average = 0.8634, Standard Variation = 0.0014
+2025-03-28 21:04:47,603 - INFO - Data balance: Diabetes_binary
+0    0.860667
+1    0.139333
+Name: proportion, dtype: float64
+2025-03-28 21:04:47,630 - INFO - ==========Starting process id: ecafacd3-98d8-4c20-8fdf-3c498438b981 ================
+2025-03-28 21:04:48,096 - INFO - === Training and rating model : Bayesian ===
+2025-03-28 21:04:49,380 - INFO - Fold 1 - Accuracy: 0.7721
+2025-03-28 21:04:49,406 - INFO -               precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     72905
+           1       0.32      0.57      0.41     11655
+
+    accuracy                           0.77     84560
+   macro avg       0.62      0.69      0.63     84560
+weighted avg       0.84      0.77      0.80     84560
+
+2025-03-28 21:04:50,562 - INFO - Fold 2 - Accuracy: 0.7760
+2025-03-28 21:04:50,592 - INFO -               precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     72653
+           1       0.33      0.58      0.42     11907
+
+    accuracy                           0.78     84560
+   macro avg       0.63      0.69      0.64     84560
+weighted avg       0.84      0.78      0.80     84560
+
+2025-03-28 21:04:51,667 - INFO - Fold 3 - Accuracy: 0.7723
+2025-03-28 21:04:51,691 - INFO -               precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     72776
+           1       0.32      0.56      0.41     11784
+
+    accuracy                           0.77     84560
+   macro avg       0.62      0.69      0.63     84560
+weighted avg       0.84      0.77      0.80     84560
+
+2025-03-28 21:04:51,691 - INFO - === Training and rating model : Neural Network ===
+2025-03-28 21:04:58,107 - INFO - Fold 1 - Accuracy: 0.8671
+2025-03-28 21:04:58,136 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.99      0.93     72905
+           1       0.59      0.12      0.20     11655
+
+    accuracy                           0.87     84560
+   macro avg       0.73      0.55      0.56     84560
+weighted avg       0.84      0.87      0.83     84560
+
+2025-03-28 21:05:09,021 - INFO - Fold 2 - Accuracy: 0.8649
+2025-03-28 21:05:09,045 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.98      0.93     72653
+           1       0.58      0.15      0.23     11907
+
+    accuracy                           0.86     84560
+   macro avg       0.73      0.56      0.58     84560
+weighted avg       0.83      0.86      0.83     84560
+
+2025-03-28 21:05:15,754 - INFO - Fold 3 - Accuracy: 0.8670
+2025-03-28 21:05:15,777 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.99      0.93     72776
+           1       0.60      0.14      0.22     11784
+
+    accuracy                           0.87     84560
+   macro avg       0.74      0.56      0.57     84560
+weighted avg       0.84      0.87      0.83     84560
+
+2025-03-28 21:05:15,777 - INFO - === Training and rating model : Random Forest ===
+2025-03-28 21:05:19,444 - INFO - Fold 1 - Accuracy: 0.8592
+2025-03-28 21:05:19,468 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.97      0.92     72905
+           1       0.47      0.17      0.25     11655
+
+    accuracy                           0.86     84560
+   macro avg       0.68      0.57      0.59     84560
+weighted avg       0.82      0.86      0.83     84560
+
+2025-03-28 21:05:23,133 - INFO - Fold 2 - Accuracy: 0.8586
+2025-03-28 21:05:23,158 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.97      0.92     72653
+           1       0.49      0.16      0.25     11907
+
+    accuracy                           0.86     84560
+   macro avg       0.69      0.57      0.58     84560
+weighted avg       0.82      0.86      0.83     84560
+
+2025-03-28 21:05:26,799 - INFO - Fold 3 - Accuracy: 0.8601
+2025-03-28 21:05:26,823 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.97      0.92     72776
+           1       0.49      0.17      0.26     11784
+
+    accuracy                           0.86     84560
+   macro avg       0.69      0.57      0.59     84560
+weighted avg       0.83      0.86      0.83     84560
+
+2025-03-28 21:05:26,823 - INFO - === Training and rating model : KNN ===
+2025-03-28 21:11:23,528 - INFO - Fold 1 - Accuracy: 0.8478
+2025-03-28 21:11:23,553 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.95      0.92     72905
+           1       0.39      0.19      0.26     11655
+
+    accuracy                           0.85     84560
+   macro avg       0.64      0.57      0.59     84560
+weighted avg       0.81      0.85      0.82     84560
+
+2025-03-28 21:14:24,564 - INFO - Fold 2 - Accuracy: 0.8474
+2025-03-28 21:14:24,591 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.95      0.91     72653
+           1       0.41      0.20      0.27     11907
+
+    accuracy                           0.85     84560
+   macro avg       0.65      0.57      0.59     84560
+weighted avg       0.81      0.85      0.82     84560
+
+2025-03-28 21:18:14,365 - INFO - Fold 3 - Accuracy: 0.8466
+2025-03-28 21:18:14,391 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.95      0.91     72776
+           1       0.40      0.19      0.26     11784
+
+    accuracy                           0.85     84560
+   macro avg       0.64      0.57      0.59     84560
+weighted avg       0.81      0.85      0.82     84560
+
+2025-03-28 21:18:14,391 - INFO - === Training and rating model : SVM ===
+2025-03-28 21:18:15,641 - INFO - Fold 1 - Accuracy: 0.8648
+2025-03-28 21:18:15,664 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93     72905
+           1       0.58      0.07      0.12     11655
+
+    accuracy                           0.86     84560
+   macro avg       0.72      0.53      0.53     84560
+weighted avg       0.83      0.86      0.82     84560
+
+2025-03-28 21:18:16,895 - INFO - Fold 2 - Accuracy: 0.8614
+2025-03-28 21:18:16,918 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.92     72653
+           1       0.57      0.06      0.12     11907
+
+    accuracy                           0.86     84560
+   macro avg       0.72      0.53      0.52     84560
+weighted avg       0.82      0.86      0.81     84560
+
+2025-03-28 21:18:18,113 - INFO - Fold 3 - Accuracy: 0.8640
+2025-03-28 21:18:18,136 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93     72776
+           1       0.60      0.07      0.13     11784
+
+    accuracy                           0.86     84560
+   macro avg       0.74      0.53      0.53     84560
+weighted avg       0.83      0.86      0.81     84560
+
+2025-03-28 21:18:18,136 - INFO - === Accuracy average results ===
+2025-03-28 21:18:18,137 - INFO - Bayesian: Average = 0.7735, Standard Variation = 0.0018
+2025-03-28 21:18:18,137 - INFO - Neural Network: Average = 0.8663, Standard Variation = 0.0010
+2025-03-28 21:18:18,137 - INFO - Random Forest: Average = 0.8593, Standard Variation = 0.0006
+2025-03-28 21:18:18,137 - INFO - KNN: Average = 0.8473, Standard Variation = 0.0005
+2025-03-28 21:18:18,137 - INFO - SVM: Average = 0.8634, Standard Variation = 0.0014
+2025-03-28 21:21:14,734 - INFO - Data balance: Diabetes_binary
+0    0.860667
+1    0.139333
+Name: proportion, dtype: float64
+2025-03-28 21:21:14,741 - INFO - ==========Starting process id: 87b72fc2-ab85-416e-9252-90e8fb8e5713 ================
+2025-03-28 21:21:15,144 - INFO - === Training and rating model : SVM ===
+2025-03-28 21:21:16,424 - INFO - Fold 1 - Accuracy: 0.8648
+2025-03-28 21:21:16,438 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93     72905
+           1       0.58      0.07      0.12     11655
+
+    accuracy                           0.86     84560
+   macro avg       0.72      0.53      0.53     84560
+weighted avg       0.83      0.86      0.82     84560
+
+2025-03-28 21:21:17,578 - INFO - Fold 2 - Accuracy: 0.8614
+2025-03-28 21:21:17,592 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.92     72653
+           1       0.57      0.06      0.12     11907
+
+    accuracy                           0.86     84560
+   macro avg       0.72      0.53      0.52     84560
+weighted avg       0.82      0.86      0.81     84560
+
+2025-03-28 21:21:18,713 - INFO - Fold 3 - Accuracy: 0.8640
+2025-03-28 21:21:18,724 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93     72776
+           1       0.60      0.07      0.13     11784
+
+    accuracy                           0.86     84560
+   macro avg       0.74      0.53      0.53     84560
+weighted avg       0.83      0.86      0.81     84560
+
+2025-03-28 21:21:18,724 - INFO - === Accuracy average results ===
+2025-03-28 21:21:18,724 - INFO - SVM: Average = 0.8634, Standard Variation = 0.0014
+2025-03-28 21:22:06,886 - INFO - Data balance: Diabetes_binary
+0    0.860667
+1    0.139333
+Name: proportion, dtype: float64
+2025-03-28 21:22:06,893 - INFO - ==========Starting process id: 3db2e3bc-b3ba-44dc-a672-20c316a5a68f ================
+2025-03-28 21:22:07,346 - INFO - === Training and rating model : Bayesian ===
+2025-03-28 21:22:08,497 - INFO - Fold 1 - Accuracy: 0.7721
+2025-03-28 21:22:08,511 - INFO -               precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     72905
+           1       0.32      0.57      0.41     11655
+
+    accuracy                           0.77     84560
+   macro avg       0.62      0.69      0.63     84560
+weighted avg       0.84      0.77      0.80     84560
+
+2025-03-28 21:22:09,453 - INFO - Fold 2 - Accuracy: 0.7760
+2025-03-28 21:22:09,466 - INFO -               precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     72653
+           1       0.33      0.58      0.42     11907
+
+    accuracy                           0.78     84560
+   macro avg       0.63      0.69      0.64     84560
+weighted avg       0.84      0.78      0.80     84560
+
+2025-03-28 21:22:10,380 - INFO - Fold 3 - Accuracy: 0.7723
+2025-03-28 21:22:10,393 - INFO -               precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     72776
+           1       0.32      0.56      0.41     11784
+
+    accuracy                           0.77     84560
+   macro avg       0.62      0.69      0.63     84560
+weighted avg       0.84      0.77      0.80     84560
+
+2025-03-28 21:22:10,393 - INFO - === Training and rating model : SVM ===
+2025-03-28 21:22:11,491 - INFO - Fold 1 - Accuracy: 0.8648
+2025-03-28 21:22:11,503 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93     72905
+           1       0.58      0.07      0.12     11655
+
+    accuracy                           0.86     84560
+   macro avg       0.72      0.53      0.53     84560
+weighted avg       0.83      0.86      0.82     84560
+
+2025-03-28 21:22:12,600 - INFO - Fold 2 - Accuracy: 0.8614
+2025-03-28 21:22:12,612 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.92     72653
+           1       0.57      0.06      0.12     11907
+
+    accuracy                           0.86     84560
+   macro avg       0.72      0.53      0.52     84560
+weighted avg       0.82      0.86      0.81     84560
+
+2025-03-28 21:22:13,718 - INFO - Fold 3 - Accuracy: 0.8640
+2025-03-28 21:22:13,731 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93     72776
+           1       0.60      0.07      0.13     11784
+
+    accuracy                           0.86     84560
+   macro avg       0.74      0.53      0.53     84560
+weighted avg       0.83      0.86      0.81     84560
+
+2025-03-28 21:22:13,731 - INFO - === Accuracy average results ===
+2025-03-28 21:22:13,731 - INFO - Bayesian: Average = 0.7735, Standard Variation = 0.0018
+2025-03-28 21:22:13,731 - INFO - SVM: Average = 0.8634, Standard Variation = 0.0014
+2025-03-28 21:23:05,696 - INFO - Data balance: Diabetes_binary
+0    0.860667
+1    0.139333
+Name: proportion, dtype: float64
+2025-03-28 21:23:05,704 - INFO - ==========Starting process id: 41391301-8b6c-420f-924a-31014fe013d9 ================
+2025-03-28 21:23:06,154 - INFO - === Training and rating model : Bayesian ===
+2025-03-28 21:23:07,311 - INFO - Fold 1 - Accuracy: 0.7721
+2025-03-28 21:23:07,325 - INFO -               precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     72905
+           1       0.32      0.57      0.41     11655
+
+    accuracy                           0.77     84560
+   macro avg       0.62      0.69      0.63     84560
+weighted avg       0.84      0.77      0.80     84560
+
+2025-03-28 21:23:08,280 - INFO - Fold 2 - Accuracy: 0.7760
+2025-03-28 21:23:08,293 - INFO -               precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     72653
+           1       0.33      0.58      0.42     11907
+
+    accuracy                           0.78     84560
+   macro avg       0.63      0.69      0.64     84560
+weighted avg       0.84      0.78      0.80     84560
+
+2025-03-28 21:23:09,218 - INFO - Fold 3 - Accuracy: 0.7723
+2025-03-28 21:23:09,231 - INFO -               precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     72776
+           1       0.32      0.56      0.41     11784
+
+    accuracy                           0.77     84560
+   macro avg       0.62      0.69      0.63     84560
+weighted avg       0.84      0.77      0.80     84560
+
+2025-03-28 21:23:09,231 - INFO - === Training and rating model : Neural Network ===
+2025-03-28 21:23:14,442 - INFO - Fold 1 - Accuracy: 0.8671
+2025-03-28 21:23:14,454 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.99      0.93     72905
+           1       0.59      0.12      0.20     11655
+
+    accuracy                           0.87     84560
+   macro avg       0.73      0.55      0.56     84560
+weighted avg       0.84      0.87      0.83     84560
+
+2025-03-28 21:23:23,554 - INFO - Fold 2 - Accuracy: 0.8649
+2025-03-28 21:23:23,568 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.98      0.93     72653
+           1       0.58      0.15      0.23     11907
+
+    accuracy                           0.86     84560
+   macro avg       0.73      0.56      0.58     84560
+weighted avg       0.83      0.86      0.83     84560
+
+2025-03-28 21:23:29,114 - INFO - Fold 3 - Accuracy: 0.8670
+2025-03-28 21:23:29,126 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.99      0.93     72776
+           1       0.60      0.14      0.22     11784
+
+    accuracy                           0.87     84560
+   macro avg       0.74      0.56      0.57     84560
+weighted avg       0.84      0.87      0.83     84560
+
+2025-03-28 21:23:29,126 - INFO - === Training and rating model : Random Forest ===
+2025-03-28 21:23:32,596 - INFO - Fold 1 - Accuracy: 0.8592
+2025-03-28 21:23:32,609 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.97      0.92     72905
+           1       0.47      0.17      0.25     11655
+
+    accuracy                           0.86     84560
+   macro avg       0.68      0.57      0.59     84560
+weighted avg       0.82      0.86      0.83     84560
+
+2025-03-28 21:23:35,991 - INFO - Fold 2 - Accuracy: 0.8586
+2025-03-28 21:23:36,004 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.97      0.92     72653
+           1       0.49      0.16      0.25     11907
+
+    accuracy                           0.86     84560
+   macro avg       0.69      0.57      0.58     84560
+weighted avg       0.82      0.86      0.83     84560
+
+2025-03-28 21:23:39,371 - INFO - Fold 3 - Accuracy: 0.8601
+2025-03-28 21:23:39,384 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.97      0.92     72776
+           1       0.49      0.17      0.26     11784
+
+    accuracy                           0.86     84560
+   macro avg       0.69      0.57      0.59     84560
+weighted avg       0.83      0.86      0.83     84560
+
+2025-03-28 21:23:39,384 - INFO - === Training and rating model : KNN ===
+2025-03-28 21:26:46,452 - INFO - Fold 1 - Accuracy: 0.8478
+2025-03-28 21:26:46,468 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.95      0.92     72905
+           1       0.39      0.19      0.26     11655
+
+    accuracy                           0.85     84560
+   macro avg       0.64      0.57      0.59     84560
+weighted avg       0.81      0.85      0.82     84560
+
+2025-03-28 21:29:45,748 - INFO - Fold 2 - Accuracy: 0.8474
+2025-03-28 21:29:45,764 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.95      0.91     72653
+           1       0.41      0.20      0.27     11907
+
+    accuracy                           0.85     84560
+   macro avg       0.65      0.57      0.59     84560
+weighted avg       0.81      0.85      0.82     84560
+
+2025-03-28 21:32:43,565 - INFO - Fold 3 - Accuracy: 0.8466
+2025-03-28 21:32:43,580 - INFO -               precision    recall  f1-score   support
+
+           0       0.88      0.95      0.91     72776
+           1       0.40      0.19      0.26     11784
+
+    accuracy                           0.85     84560
+   macro avg       0.64      0.57      0.59     84560
+weighted avg       0.81      0.85      0.82     84560
+
+2025-03-28 21:32:43,580 - INFO - === Training and rating model : SVM ===
+2025-03-28 21:32:44,730 - INFO - Fold 1 - Accuracy: 0.8648
+2025-03-28 21:32:44,742 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93     72905
+           1       0.58      0.07      0.12     11655
+
+    accuracy                           0.86     84560
+   macro avg       0.72      0.53      0.53     84560
+weighted avg       0.83      0.86      0.82     84560
+
+2025-03-28 21:32:45,854 - INFO - Fold 2 - Accuracy: 0.8614
+2025-03-28 21:32:45,866 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.92     72653
+           1       0.57      0.06      0.12     11907
+
+    accuracy                           0.86     84560
+   macro avg       0.72      0.53      0.52     84560
+weighted avg       0.82      0.86      0.81     84560
+
+2025-03-28 21:32:46,984 - INFO - Fold 3 - Accuracy: 0.8640
+2025-03-28 21:32:46,996 - INFO -               precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93     72776
+           1       0.60      0.07      0.13     11784
+
+    accuracy                           0.86     84560
+   macro avg       0.74      0.53      0.53     84560
+weighted avg       0.83      0.86      0.81     84560
+
+2025-03-28 21:32:46,996 - INFO - === Accuracy average results ===
+2025-03-28 21:32:46,996 - INFO - Bayesian: Average = 0.7735, Standard Variation = 0.0018
+2025-03-28 21:32:46,996 - INFO - Neural Network: Average = 0.8663, Standard Variation = 0.0010
+2025-03-28 21:32:46,996 - INFO - Random Forest: Average = 0.8593, Standard Variation = 0.0006
+2025-03-28 21:32:46,996 - INFO - KNN: Average = 0.8473, Standard Variation = 0.0005
+2025-03-28 21:32:46,996 - INFO - SVM: Average = 0.8634, Standard Variation = 0.0014

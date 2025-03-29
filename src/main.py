@@ -3,6 +3,8 @@ import numpy as np
 import logging
 import matplotlib.pyplot as plt
 import uuid
+import sklearn.metrics as metrics
+from sklearn.metrics import accuracy_score, classification_report, roc_curve, auc
 
 from sklearn.metrics import accuracy_score, classification_report
 
@@ -73,12 +75,61 @@ def main(x, y, task_id):
     os.remove(filename)
 
     plt.figure(figsize=(10, 6))
-    plt.bar(models_name, average_acc_per_model)
-    plt.title("Média de Acurácia por Modelo")
-    plt.ylabel("Acurácia Média")
-    plt.ylim(0, 1)
-    plt.grid(axis='y')
-    plt.tight_layout()
+    for model_name, train_model in models.items():
+        tpr_list = []
+        fpr_list = []
+        mean_auc = 0
+        
+        for _, row in df_splits.iterrows():
+            fold = row["fold"]
+            train_indices = eval(row["train_indices"])
+            test_indices = eval(row["test_indices"])
+
+            x_train_val = x.iloc[train_indices]
+            y_train_val = y.iloc[train_indices]
+            x_test = x.iloc[test_indices]
+            y_test = y.iloc[test_indices]
+
+            model = train_model(x_train_val, y_train_val)
+            
+            try:
+                y_pred_proba = model.predict_proba(x_test)[:, 1]
+            except (AttributeError, NotImplementedError):
+                try:
+                    y_pred_proba = model.decision_function(x_test)
+                except (AttributeError, NotImplementedError):
+                    y_pred_proba = model.predict(x_test)
+            
+            fpr, tpr, _ = roc_curve(y_test, y_pred_proba)
+            roc_auc = auc(fpr, tpr)
+            mean_auc += roc_auc
+            
+            mean_fpr = np.linspace(0, 1, 100)
+            mean_tpr = np.interp(mean_fpr, fpr, tpr)
+            mean_tpr[0] = 0.0
+            tpr_list.append(mean_tpr)
+            fpr_list.append(mean_fpr)
+
+        # Calcula a média das curvas ROC
+        mean_tpr = np.mean(tpr_list, axis=0)
+        mean_fpr = fpr_list[0]
+        mean_auc = mean_auc / len(df_splits)
+        
+        plt.plot(
+            mean_fpr, 
+            mean_tpr,
+            label=f'{model_name} (AUC = {mean_auc:.2f})',
+            linewidth=2
+        )
+
+    plt.plot([0, 1], [0, 1], 'k--', label='Aleatório')
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('Taxa de Falsos Positivos')
+    plt.ylabel('Taxa de Verdadeiros Positivos')
+    plt.title('Curva ROC Média para Cada Modelo')
+    plt.legend(loc="lower right")
+    plt.grid(True)
     plt.show()
 
 if __name__ == "__main__":
