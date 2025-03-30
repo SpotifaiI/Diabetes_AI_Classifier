@@ -18,6 +18,7 @@
     - [Suporte (Support)](#suporte-support)
     - [Macro Average (Média Macro)](#macro-average-média-macro)
     - [Weighted Average (Média Ponderada)](#weighted-average-média-ponderada)
+- [Comparação](#comparacao)
 
 # Equipe
 
@@ -434,3 +435,15 @@ A média ponderada calcula as métricas médias, mas leva em consideração o n�
 $$
 \text{Weighted Average} = \sum_{i=1}^{N} \left( \frac{\text{Support}_i}{\text{Total}} \times \text{Métrica}_i \right)
 $$
+
+
+## Comparação:
+
+### Curva AUC-ROC
+
+![roc](https://github.com/user-attachments/assets/3d6df2dc-1e1e-4f67-9297-105008f5a2dd)
+
+### Comparação de Acurácia:
+
+![Captura de tela 2025-03-29 220514](https://github.com/user-attachments/assets/7e973bf6-bb82-4783-b326-fd3cfc5422d8)
+
