@@ -4,7 +4,9 @@ import logging
 import matplotlib.pyplot as plt
 import uuid
 
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, roc_curve, auc
+from sklearn.preprocessing import label_binarize
+from sklearn.multiclass import OneVsRestClassifier
 
 import data_process as data
 from models import (
@@ -40,9 +42,13 @@ def main(x, y, task_id):
     }
     models_acc_list = {model_name: [] for model_name in models}
 
+    roc_curves = {}
+
     for model_name, train_model in models.items():
         logging.info("=== Training and rating model : %s ===", model_name)
-        
+        y_true_all = []
+        y_score_all = []
+
         for _, row in df_splits.iterrows():
             fold = row["fold"]
             train_indices = eval(row["train_indices"])
@@ -53,16 +59,20 @@ def main(x, y, task_id):
             x_test = x.iloc[test_indices]
             y_test = y.iloc[test_indices]
 
-            # sm = SMOTE(random_state=42)
-            # x_train_val, y_train_val = sm.fit_resample(x_train_val, y_train_val)
-
             model = train_model(x_train_val, y_train_val)
             y_pred = model.predict(x_test)
             acc = accuracy_score(y_test, y_pred)
             models_acc_list[model_name].append(acc)
 
+            y_true_all.extend(y_test)
+            y_score_all.extend(y_pred)
+
             logging.info(f"Fold {fold} - Accuracy: {acc:.4f}")
             logging.info(classification_report(y_test, y_pred))
+        
+        fpr, tpr, _ = roc_curve(y_true_all, y_score_all)
+        roc_auc = auc(fpr, tpr)
+        roc_curves[model_name] = (fpr, tpr, roc_auc)
     
     logging.info("=== Accuracy average results ===")
     for model_name, accs in models_acc_list.items():
@@ -78,6 +88,22 @@ def main(x, y, task_id):
     plt.ylabel("Acurácia Média")
     plt.ylim(0, 1)
     plt.grid(axis='y')
+    plt.tight_layout()
+    plt.show()
+
+    # Plot ROC curves
+    plt.figure(figsize=(10, 8))
+    for model_name, (fpr, tpr, roc_auc) in roc_curves.items():
+        plt.plot(fpr, tpr, lw=2, label=f'{model_name} (AUC = {roc_auc:.2f})')
+
+    plt.plot([0, 1], [0, 1], 'k--', lw=2)
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('Taxa de Falso Positivo (FPR)')
+    plt.ylabel('Taxa de Verdadeiro Positivo (TPR)')
+    plt.title('Curva ROC Comparativa')
+    plt.legend(loc='lower right')
+    plt.grid()
     plt.tight_layout()
     plt.show()
 
