@@ -18,7 +18,8 @@
     - [Suporte (Support)](#suporte-support)
     - [Macro Average (Média Macro)](#macro-average-média-macro)
     - [Weighted Average (Média Ponderada)](#weighted-average-média-ponderada)
-- [Comparação](#comparacao)
+- [Comparação](#comparação)
+- [Disclaimer](#disclaimer)
 
 # Equipe
 
@@ -447,3 +448,6 @@ $$
 
 ![Captura de tela 2025-03-29 220514](https://github.com/user-attachments/assets/7e973bf6-bb82-4783-b326-fd3cfc5422d8)
 
+## Disclaimer
+
+Ao analisar a base de dados, notamos um desbalanceamento significativo nos resultados, o que poderia impactar o desempenho do modelo de machine learning. Para mitigar esse problema, tentamos aplicar um método de balanceamento conhecido como SMOTE (Synthetic Minority Over-sampling Technique), que gera novas amostras sintéticas da classe minoritária em vez de apenas replicar os dados existentes. No entanto, após a aplicação do SMOTE, não obtivemos os resultados esperados, o que pode ter ocorrido devido a características específicas da base de dados ou à forma como os novos exemplos foram gerados. Diante disso, optamos por utilizar os dados originais sem alterações e lidar com o desbalanceamento de outras formas durante o treinamento do modelo.
